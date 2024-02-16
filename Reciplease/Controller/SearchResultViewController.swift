@@ -31,15 +31,12 @@ class SearchResultViewController: UITableViewController {
         let recipe = recipes[indexPath.row].recipe
            
         cell.recipeTitle.text = "\(recipe.label)"
-        cell.recipeIngredients.text = "\(recipe.ingredientLines.joined(separator: ","))"
+
         
         let imageData = NSData(contentsOf: NSURL(string: "\(recipe.image)")! as URL)
         cell.recipeImage.image = UIImage(data: imageData! as Data)
         cell.recipeImage.addBlackGradientLayerInForeground()
 
-        cell.recipeYield.text = "\(recipe.yield)"
-        cell.recipeTime.text = "\(recipe.totalTime)"
-        
         return cell
     }
 
