@@ -55,7 +55,7 @@ class RecipleaseServiceTestcase: XCTestCase {
         wait(for: [expectation], timeout: 0.10)
     }
     
-    func testGetExchangeShouldPostFailedCallbackIncorrectResponse() {
+    func testGetRecipeShouldPostFailedCallbackIncorrectResponse() {
         let reciplease = RecipleaseService(session: AlamofireSessionFake(data: FakeResponseData.recipleaseCorrectData, response: FakeResponseData.responseKO, error: nil))
         
         let expectation = XCTestExpectation(description: "Wait for queue change.")
@@ -77,7 +77,7 @@ class RecipleaseServiceTestcase: XCTestCase {
         wait(for: [expectation], timeout: 0.10)
     }
     
-    func testGetExchangeShouldPostFailedCallbackIncorrectData() {
+    func testGetRecipeShouldPostFailedCallbackIncorrectData() {
         let reciplease = RecipleaseService(session: AlamofireSessionFake(data: FakeResponseData.IncorrectData, response: FakeResponseData.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "Wait for queue change.")
@@ -99,7 +99,7 @@ class RecipleaseServiceTestcase: XCTestCase {
         wait(for: [expectation], timeout: 0.10)
     }
     
-    func testGetExchangeShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
+    func testGetRecipeShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         let reciplease = RecipleaseService(session: AlamofireSessionFake(data: FakeResponseData.recipleaseCorrectData, response: FakeResponseData.responseOK, error: nil))
         
         let expectation = XCTestExpectation(description: "Wait for queue change.")
