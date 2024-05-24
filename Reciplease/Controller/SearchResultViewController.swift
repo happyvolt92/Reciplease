@@ -3,7 +3,7 @@
 //  Reciplease
 //
 //  Created by elodie gage on 15/02/2024.
-//    
+//
 //
 
 import UIKit
@@ -19,6 +19,10 @@ class SearchResultViewController: UITableViewController {
     var from = 0
     var to = 20
     var isLoading = false
+    
+    // MARK: - Methods
+    
+    // Removed the loadImage method here because it's now in ImageDownloader.swift
     
     // MARK: - TableView
     
@@ -50,7 +54,7 @@ class SearchResultViewController: UITableViewController {
     }
     
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        guard isLoading == false else { return }
+        guard !isLoading else { return }
         isLoading = true
         from += 20
         to += 20
@@ -58,9 +62,7 @@ class SearchResultViewController: UITableViewController {
             self.isLoading = false
             DispatchQueue.main.async {
                 if error == nil {
-                     self.recipes.append(contentsOf: recipe?.hits ?? [])
-//                    let r = recipe as! RecipleaseData?
-//                    self.recipes.append(contentsOf: r?.hits ?? [])
+                    self.recipes.append(contentsOf: recipe?.hits ?? [])
                     self.tableView.reloadData()
                 } else {
                     self.alert(title: "Erreur", message: "Veuillez vérifier les informations renseignées et votre connexion !")

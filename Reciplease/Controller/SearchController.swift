@@ -32,7 +32,7 @@ class SearchController: UIViewController, UITextViewDelegate {
             listOfIngredients.text = "- " + ingredients.joined(separator: "\n- ")
             ingredient.text = ""
         } else {
-            alert(title: "Erreur !", message: "Veuillez ajouter un ingrédient")
+            alert(title: "Erreur !", message: "please add ingredients")
         }
     }
     
