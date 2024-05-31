@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import Reciplease
+import CoreData
 
 class CoreDataManagerTestCase: XCTestCase {
     
@@ -18,11 +19,8 @@ class CoreDataManagerTestCase: XCTestCase {
     
     // MARK: - Tests Life Cycle
     
-    override func setUp() {
-        super.setUp()
-        coreDataStack = MockCoreDataStack()
-        coreDataManager = CoreDataManager(coreDataStack: coreDataStack)
-    }
+//    Wipe entre chaque test; delete les entites (beforeEach?)
+
     
     override func tearDown() {
         super.tearDown()
@@ -30,6 +28,19 @@ class CoreDataManagerTestCase: XCTestCase {
         coreDataStack = nil
     }
     
+
+
+    override func setUpWithError() throws {
+      try super.setUpWithError()
+        coreDataStack = MockCoreDataStack()
+        coreDataManager = CoreDataManager(coreDataStack: coreDataStack)
+      // Create a fetch request for any kind of NSFetchRequestResult
+      let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest<NSFetchRequestResult>(entityName: "SavedRecipe")
+      let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+      try coreDataStack.persistentContainer.viewContext.execute(deleteRequest)
+    }
+
+
     // MARK: - Tests
     
     func testAddRecipeToFavoritesMethods_WhenAnEntityIsCreated_ThenShouldBeCorrectlySaved() {

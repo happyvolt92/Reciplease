@@ -29,23 +29,6 @@ class AlamofireSessionFake: Networking {
     // MARK: - Method
     
     func request(with url: URL, completionHandler: @escaping (Data?, Error?, HTTPURLResponse?) -> Void) {
-//        if let error = self.error {
-//            return completionHandler(nil, error)
-//        }
-//
-//        guard let response = response, response.statusCode == 200 else {
-//            return completionHandler(nil, ErrorCases.wrongResponse(statusCode: self.response?.statusCode))
-//        }
-//
-//        guard let data = data else {
-//            return completionHandler(nil, ErrorCases.noData)
-//        }
-//
-//        do {
-//            let result = try JSONDecoder().decode(RecipleaseData.self, from: data)
-//            return completionHandler(result, nil)
-//        } catch {
-//            return completionHandler(nil, ErrorCases.errorDecode)
-//        }
+
     return completionHandler(data, error, response) }
 }

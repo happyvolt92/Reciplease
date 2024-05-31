@@ -56,8 +56,9 @@ class RecipeController: UIViewController {
     }
     
     func removeRecipe() {
+        guard let recipe = recipe else { return }
         let request: NSFetchRequest<SavedRecipe> = SavedRecipe.fetchRequest()
-        request.predicate = NSPredicate(format: "uri == %@", recipe!.uri)
+        request.predicate = NSPredicate(format: "uri == %@", recipe.uri)
         if let result = try? AppDelegate.viewContext.fetch(request) {
             for object in result {
                 AppDelegate.viewContext.delete(object)
@@ -71,14 +72,19 @@ class RecipeController: UIViewController {
     // MARK: - Actions
     
     @IBAction func viewRecipe(_ sender: UIButton) {
-        guard let stringUrl = recipe?.url else { return }
-        guard let url = URL(string: "\(stringUrl)") else { return }
+        guard let stringUrl = recipe?.url.absoluteString else { return }
+        guard let url = URL(string: stringUrl) else { return }
         UIApplication.shared.open(url)
     }
     
     @IBAction func saveRecipe(_ sender: UIBarButtonItem) {
+        guard let recipe = recipe else { return }
         if favoritebutton.image == UIImage(systemName: "star") {
-            addRecipe(title: recipeTitle.text!, totalTime: recipeTime.text!, ingredients: "- " + (recipe?.ingredientLines.joined(separator: "\n- "))!, yield: recipeYield.text!, image: "\(recipe!.image)", uri: "\(recipe!.uri)", url: "\(recipe!.url)")
+            guard let title = recipeTitle.text,
+                  let totalTime = recipeTime.text,
+                  let yield = recipeYield.text else { return }
+            let ingredients = recipe.ingredientLines.joined(separator: "\n- ")
+            addRecipe(title: title, totalTime: totalTime, ingredients: "- " + ingredients, yield: yield, image: "\(recipe.image)", uri: "\(recipe.uri)", url: "\(recipe.url)")
         } else {
             removeRecipe()
         }
@@ -89,16 +95,20 @@ class RecipeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        recipeIngredients.text = "- " + (recipe?.ingredientLines.joined(separator: "\n- "))!
-        let imageData = NSData(contentsOf: NSURL(string: "\(recipe!.image)")! as URL)
-        recipeImage.image = UIImage(data: imageData! as Data)
+        guard let recipe = recipe else { return }
+        recipeIngredients.text = "- " + recipe.ingredientLines.joined(separator: "\n- ")
+        
+        guard let imageUrl = URL(string: "\(recipe.image)"),
+              let imageData = try? Data(contentsOf: imageUrl) else { return }
+        recipeImage.image = UIImage(data: imageData)
         recipeImage.addBlackGradientLayerInForeground()
-        recipeYield.text = "\(recipe!.yield)"
-        recipeTime.text = "\(recipe!.totalTime)"
-        recipeTitle.text = "\(recipe!.label)"
+        
+        recipeYield.text = "\(recipe.yield)"
+        recipeTime.text = "\(recipe.totalTime)"
+        recipeTitle.text = "\(recipe.label)"
         
         let request: NSFetchRequest<SavedRecipe> = SavedRecipe.fetchRequest()
-        request.predicate = NSPredicate(format: "uri == %@", recipe!.uri)
+        request.predicate = NSPredicate(format: "uri == %@", recipe.uri)
         guard let recipes = try? AppDelegate.viewContext.fetch(request) else { return }
         if recipes.count > 0 {
             self.favoritebutton.image = UIImage(systemName: "star.fill")

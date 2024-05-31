@@ -11,16 +11,17 @@ class FavoritesController: UITableViewController {
 
   // MARK: - Methods
 
-  func loadSavedData() {
-    let request: NSFetchRequest<SavedRecipe> = SavedRecipe.fetchRequest()
+    func loadSavedData() {
+        let request: NSFetchRequest<SavedRecipe> = SavedRecipe.fetchRequest()
 
-    do {
-      favoriteRecipe = try AppDelegate.viewContext.fetch(request)
-      tableView.reloadData()
-    } catch {
-      favoriteRecipe = []
+        do {
+            favoriteRecipe = try AppDelegate.viewContext.fetch(request)
+            tableView.reloadData()
+        } catch {
+            favoriteRecipe = []
+        }
     }
-  }
+
 
   // MARK: - TableView
 
@@ -38,7 +39,6 @@ class FavoritesController: UITableViewController {
     cell.recipeYield.text = recipe.yield
 
     if let imageUrlString = recipe.image, let url = URL(string: imageUrlString) {
-      // Use ImageDownloader.loadImage here
       ImageDownloader.loadImage(from: url) { image in
         cell.recipeImage.image = image
         cell.recipeImage.addBlackGradientLayerInForeground()
@@ -60,11 +60,12 @@ class FavoritesController: UITableViewController {
   }
 
   // MARK: - View life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadSavedData()
+    }
 
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    loadSavedData()
-  }
 
   override func viewDidAppear(_ animated: Bool) {
     loadSavedData()

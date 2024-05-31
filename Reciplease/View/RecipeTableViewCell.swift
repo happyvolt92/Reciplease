@@ -18,10 +18,7 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeYield: UILabel!
     @IBOutlet weak var recipeTime: UILabel!
     
-    // MARK: - Methods
-    
 
-    
     // MARK: - View life cycle
 
     override func awakeFromNib() {
