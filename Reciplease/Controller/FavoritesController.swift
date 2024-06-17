@@ -41,7 +41,7 @@ class FavoritesController: UITableViewController {
         }
         
         cell.recipeTime.text = recipe.totalTime
-        cell.recipeIngredients.text = recipe.ingredients
+//        cell.recipeIngredients.text = recipe.ingredients
         cell.recipeYield.text = recipe.yield
 
         if let imageUrlString = recipe.image, let url = URL(string: imageUrlString) {

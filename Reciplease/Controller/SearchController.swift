@@ -53,8 +53,6 @@ class SearchController: UIViewController, UITextViewDelegate {
                 if error == nil {
                     self.dataRecipe = recipe
                     self.recipes = recipe!.hits
-//                    self.dataRecipe = recipe
-//                    self.recipes = self.dataRecipe!.hits
                     self.performSegue(withIdentifier: "SearchToResult", sender: nil)
                 } else {
                     self.alert(title: "Erreur", message: "Veuillez vérifier les informations renseignées et votre connexion !")

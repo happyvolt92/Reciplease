@@ -62,21 +62,15 @@
                             <constraint firstAttribute="width" constant="18.670000000000002" id="kyT-Fr-JN9"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eb7-3b-R8C">
-                        <rect key="frame" x="25" y="136" width="116" height="22"/>
-                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CnR-lb-sVb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
                     </imageView>
-                    <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iTw-Uf-KaC">
-                        <rect key="frame" x="0.0" y="67" width="414" height="58"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" id="iTw-Uf-KaC">
+                        <rect key="frame" x="25" y="67" width="369" height="92"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
+                        <color key="highlightedColor" red="0.48095383446037776" green="0.49035585076078775" blue="0.51856189966201782" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </label>
                 </subviews>
                 <constraints>
@@ -84,7 +78,6 @@
                     <constraint firstItem="CnR-lb-sVb" firstAttribute="leading" secondItem="4Gu-G2-3go" secondAttribute="leading" id="50L-vt-0cm"/>
                     <constraint firstItem="q4Q-cs-PVS" firstAttribute="leading" secondItem="Etu-1b-Jxx" secondAttribute="trailing" id="5bC-US-A1l"/>
                     <constraint firstAttribute="bottom" secondItem="CnR-lb-sVb" secondAttribute="bottom" id="ExL-s6-stz"/>
-                    <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="eb7-3b-R8C" secondAttribute="trailing" constant="5" id="Inu-1s-kjx"/>
                     <constraint firstAttribute="trailing" secondItem="CnR-lb-sVb" secondAttribute="trailing" id="Lo1-d2-Ygg"/>
                     <constraint firstItem="Etu-1b-Jxx" firstAttribute="top" secondItem="4Gu-G2-3go" secondAttribute="topMargin" constant="5" id="QxY-0R-mlr"/>
                     <constraint firstItem="CnR-lb-sVb" firstAttribute="top" secondItem="4Gu-G2-3go" secondAttribute="top" id="TR5-lL-F9V"/>
@@ -93,13 +86,10 @@
                     <constraint firstItem="ROc-r6-KW3" firstAttribute="leading" secondItem="Etu-1b-Jxx" secondAttribute="leading" id="jTT-cq-IB7"/>
                     <constraint firstItem="q4Q-cs-PVS" firstAttribute="top" secondItem="4Gu-G2-3go" secondAttribute="top" constant="36.5" id="jg2-5C-aC6"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Etu-1b-Jxx" secondAttribute="trailing" constant="19" id="tZw-f1-bhF"/>
-                    <constraint firstItem="eb7-3b-R8C" firstAttribute="leading" secondItem="4Gu-G2-3go" secondAttribute="leadingMargin" constant="5" id="uRk-zx-2ZB"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="eb7-3b-R8C" secondAttribute="bottom" constant="5" id="wH1-03-SZY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="recipeImage" destination="CnR-lb-sVb" id="6GR-Jy-u1v"/>
-                <outlet property="recipeIngredients" destination="eb7-3b-R8C" id="eAx-1u-CaG"/>
                 <outlet property="recipeTime" destination="iCC-GZ-I7k" id="0mX-Dl-gRP"/>
                 <outlet property="recipeTitle" destination="iTw-Uf-KaC" id="It3-Nd-rxz"/>
                 <outlet property="recipeYield" destination="b5c-Ee-ies" id="Q7D-QR-KnS"/>

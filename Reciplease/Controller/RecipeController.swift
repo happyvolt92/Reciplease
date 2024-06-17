@@ -38,7 +38,6 @@ class RecipeController: UIViewController {
         
         do {
             try AppDelegate.viewContext.save()
-            print("On a \(favoriteRecipe.count) recette(s)")
             self.favoritebutton.image = UIImage(systemName: "star.fill")
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
@@ -52,7 +51,6 @@ class RecipeController: UIViewController {
         if let result = try? AppDelegate.viewContext.fetch(request) {
             for object in result {
                 AppDelegate.viewContext.delete(object)
-                print("On a \(favoriteRecipe.count) recette(s)")
                 self.favoritebutton.image = UIImage(systemName: "star")
             }
         }

@@ -13,11 +13,8 @@ class RecipeCellTableView: UITableViewCell {
         // MARK: - Outlets
     
     @IBOutlet weak var recipeImage: UIImageView!
-    
     @IBOutlet  var recipeTitle: UILabel!
-    
     @IBOutlet weak var recipeIngredients: UILabel!
-    
     @IBOutlet weak var recipeYield: UILabel!
     @IBOutlet weak var recipeTime: UILabel!
     // MARK: - View life cycle

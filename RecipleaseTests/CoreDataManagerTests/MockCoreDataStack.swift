@@ -20,7 +20,7 @@ class MockCoreDataStack: CoreDataStack {
     
     override init(modelName: String) {
         super.init(modelName: modelName)
-        
+       
         let desc = NSPersistentStoreDescription()
         desc.type = NSInMemoryStoreType
         self.persistentContainer.persistentStoreDescriptions = [desc]
