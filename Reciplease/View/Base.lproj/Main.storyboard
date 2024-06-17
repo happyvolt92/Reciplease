@@ -170,7 +170,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorite " id="b8C-Vn-CF9" userLabel="Favorite"/>
                     <connections>
-                        <segue destination="jth-W7-l1i" kind="show" identifier="ShowRecipeDetail" id="ODO-LM-Pb9"/>
+                        <segue destination="jth-W7-l1i" kind="show" identifier="Recipe" id="ODO-LM-Pb9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFh-hf-qhj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
