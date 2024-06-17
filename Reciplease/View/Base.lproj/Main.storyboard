@@ -170,7 +170,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Favorite " id="b8C-Vn-CF9" userLabel="Favorite"/>
                     <connections>
-                        <segue destination="jth-W7-l1i" kind="show" identifier="ShowRecipeDetail" id="ODO-LM-Pb9"/>
+                        <segue destination="jth-W7-l1i" kind="show" identifier="Recipe" id="ODO-LM-Pb9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFh-hf-qhj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -234,6 +234,9 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bTQ-f5-Yn7">
                                 <rect key="frame" x="0.0" y="103" width="393" height="360"/>
+                                <accessibility key="accessibilityConfiguration" hint="Image from the cooked recipe" label="recipe Image">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="360" id="H7O-yu-hGq"/>
                                 </constraints>
@@ -246,12 +249,14 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owc-ji-Smh">
                                                 <rect key="frame" x="2.3333333333333144" y="2" width="41.666666666666664" height="20.666666666666668"/>
+                                                <accessibility key="accessibilityConfiguration" hint="number of portion" label="recipe yield"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e51-U3-Tsc">
                                                 <rect key="frame" x="2" y="22" width="41.666666666666664" height="20.666666666666671"/>
+                                                <accessibility key="accessibilityConfiguration" hint="cooking time" label="recipe time"/>
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -298,6 +303,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="I9q-Nk-FKg" userLabel="Ingredients">
                                 <rect key="frame" x="10" y="519" width="373" height="180"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" hint="Recipe's ingredients list" label="Ingredients list"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="269" id="26V-oI-Rk6"/>
                                 </constraints>
@@ -307,6 +313,7 @@
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🧅🥦 Ingredients :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2B9-T2-Bmc">
                                 <rect key="frame" x="107" y="475" width="200" height="36"/>
+                                <accessibility key="accessibilityConfiguration" hint="check below the  ingredients list for this recipe" label="ingredients title list"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="hna-Rx-zCj"/>
                                 </constraints>
@@ -317,6 +324,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5m-sr-X7H">
                                 <rect key="frame" x="121.66666666666669" y="719" width="150" height="43"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <accessibility key="accessibilityConfiguration" hint="Link to see the recipe details " label="Recipe Link"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="1I4-7g-4gb"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="gkz-ls-AYG"/>
@@ -331,6 +339,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRL-rZ-8Yb">
                                 <rect key="frame" x="31" y="347" width="246" height="83"/>
+                                <accessibility key="accessibilityConfiguration" hint="Name of the recipe" label="recipe Name"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -426,7 +435,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ODO-LM-Pb9"/>
+        <segue reference="VQm-x7-qx8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

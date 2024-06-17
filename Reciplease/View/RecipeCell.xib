@@ -29,12 +29,14 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5c-Ee-ies">
                                 <rect key="frame" x="0.0" y="0.0" width="60" height="22.333333333333332"/>
+                                <accessibility key="accessibilityConfiguration" hint="Number of portion" label="recipe Yield"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCC-GZ-I7k">
                                 <rect key="frame" x="0.0" y="24.333333333333336" width="60" height="22.333333333333336"/>
+                                <accessibility key="accessibilityConfiguration" hint="cooking time" label="recipe time"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -64,10 +66,14 @@
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CnR-lb-sVb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
+                        <accessibility key="accessibilityConfiguration" hint="image of the recipe already cooked" label="recipe Image">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="clip" numberOfLines="3" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontSizeToFit="NO" id="iTw-Uf-KaC">
                         <rect key="frame" x="25" y="67" width="369" height="92"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <accessibility key="accessibilityConfiguration" hint="Recipe's name" label="Recipe Title"/>
                         <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="highlightedColor" red="0.48095383446037776" green="0.49035585076078775" blue="0.51856189966201782" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
