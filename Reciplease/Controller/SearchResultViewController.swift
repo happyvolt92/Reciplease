@@ -1,10 +1,3 @@
-//
-//  SearchResultViewController.swift
-//  Reciplease
-//
-//  Created by elodie gage on 15/02/2024.
-//
-//
 import UIKit
 
 class SearchResultViewController: UITableViewController {
@@ -19,10 +12,6 @@ class SearchResultViewController: UITableViewController {
     var to = 20
     var isLoading = false
     
-    let imageDownloader = ImageDownloader() // Instance of ImageDownloader for asynchronous image loading
-    
-    // MARK: - Methods
-    
     // MARK: - TableView
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,26 +19,22 @@ class SearchResultViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as! RecipeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as! RecipeCellTableView
         let recipe = recipes[indexPath.row].recipe
         
-        cell.recipeTitle.text = "\(recipe.label)"
+        cell.recipeTitle.text = recipe.label
         
-        // Clear the previous image
-        cell.recipeImage.image = nil
-        
-        // Load the image asynchronously
         if let imageUrl = URL(string: recipe.image.absoluteString) {
-            ImageDownloader.loadImage(from: imageUrl) { image in
-                DispatchQueue.main.async {
-                    if let cellToUpdate = tableView.cellForRow(at: indexPath) as? RecipeTableViewCell {
-                        cellToUpdate.recipeImage.image = image
-                        cellToUpdate.recipeImage.addBlackGradientLayerInForeground()
+            DispatchQueue.global().async {
+                if let imageData = try? Data(contentsOf: imageUrl) {
+                    DispatchQueue.main.async {
+                        cell.recipeImage.image = UIImage(data: imageData)
+                        cell.recipeImage.addBlackGradientLayerInForeground()
                     }
                 }
             }
         }
-        
+
         return cell
     }
 
@@ -90,5 +75,9 @@ class SearchResultViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     
+         let nib = UINib(nibName: "RecipeCell", bundle: nil)
+         tableView.register(nib, forCellReuseIdentifier: "RecipeCell")
+        
     }
 }

@@ -1,11 +1,3 @@
-//
-//  RecipeController.swift
-//  Reciplease
-//
-//  Created by elodie gage on 15/02/2024.
-//
-//
-
 import UIKit
 import CoreData
 
@@ -15,7 +7,7 @@ class RecipeController: UIViewController {
     
     var recipe: Recipe?
     var favoriteRecipe: [SavedRecipe] {
-        let request: NSFetchRequest = SavedRecipe.fetchRequest()
+        let request: NSFetchRequest<SavedRecipe> = SavedRecipe.fetchRequest()
         do {
            return try AppDelegate.viewContext.fetch(request)
         } catch {
@@ -35,7 +27,6 @@ class RecipeController: UIViewController {
     // MARK: - Methods
     
     func addRecipe(title: String, totalTime: String, ingredients: String, yield: String, image: String, uri: String, url: String) {
-        
         let entity = SavedRecipe(context: AppDelegate.viewContext)
         entity.title = title
         entity.totalTime = totalTime
@@ -48,8 +39,7 @@ class RecipeController: UIViewController {
         do {
             try AppDelegate.viewContext.save()
             print("On a \(favoriteRecipe.count) recette(s)")
-            let image = UIImage(systemName: "star.fill")
-            self.favoritebutton.image = image
+            self.favoritebutton.image = UIImage(systemName: "star.fill")
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
@@ -63,8 +53,7 @@ class RecipeController: UIViewController {
             for object in result {
                 AppDelegate.viewContext.delete(object)
                 print("On a \(favoriteRecipe.count) recette(s)")
-                let image = UIImage(systemName: "star")
-                self.favoritebutton.image = image
+                self.favoritebutton.image = UIImage(systemName: "star")
             }
         }
     }
@@ -84,7 +73,7 @@ class RecipeController: UIViewController {
                   let totalTime = recipeTime.text,
                   let yield = recipeYield.text else { return }
             let ingredients = recipe.ingredientLines.joined(separator: "\n- ")
-            addRecipe(title: title, totalTime: totalTime, ingredients: "- " + ingredients, yield: yield, image: "\(recipe.image)", uri: "\(recipe.uri)", url: "\(recipe.url)")
+            addRecipe(title: title, totalTime: totalTime, ingredients: "- " + ingredients, yield: yield, image: recipe.image.absoluteString, uri: recipe.uri, url: recipe.url.absoluteString)
         } else {
             removeRecipe()
         }
@@ -98,10 +87,17 @@ class RecipeController: UIViewController {
         guard let recipe = recipe else { return }
         recipeIngredients.text = "- " + recipe.ingredientLines.joined(separator: "\n- ")
         
-        guard let imageUrl = URL(string: "\(recipe.image)"),
-              let imageData = try? Data(contentsOf: imageUrl) else { return }
-        recipeImage.image = UIImage(data: imageData)
-        recipeImage.addBlackGradientLayerInForeground()
+        // Load the image asynchronously
+        if let imageUrl = URL(string: recipe.image.absoluteString) {
+            DispatchQueue.global().async {
+                if let imageData = try? Data(contentsOf: imageUrl) {
+                    DispatchQueue.main.async {
+                        self.recipeImage.image = UIImage(data: imageData)
+                        self.recipeImage.addBlackGradientLayerInForeground()
+                    }
+                }
+            }
+        }
         
         recipeYield.text = "\(recipe.yield)"
         recipeTime.text = "\(recipe.totalTime)"
@@ -110,10 +106,6 @@ class RecipeController: UIViewController {
         let request: NSFetchRequest<SavedRecipe> = SavedRecipe.fetchRequest()
         request.predicate = NSPredicate(format: "uri == %@", recipe.uri)
         guard let recipes = try? AppDelegate.viewContext.fetch(request) else { return }
-        if recipes.count > 0 {
-            self.favoritebutton.image = UIImage(systemName: "star.fill")
-        } else {
-            self.favoritebutton.image = UIImage(systemName: "star")
-        }
+        self.favoritebutton.image = recipes.count > 0 ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
     }
 }

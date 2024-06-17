@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5103A86F2473DFF40069F5B1 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5103A86E2473DFF40069F5B1 /* UIViewController.swift */; };
-		5168C61B24854C1A00AF4E32 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5168C61A24854C1A00AF4E32 /* RecipeTableViewCell.swift */; };
 		516C6646248BA68C00ED11BF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516C6645248BA68C00ED11BF /* UIImageView.swift */; };
 		516EB08B24C6E48300ADFC9B /* Reciplease.json in Resources */ = {isa = PBXBuildFile; fileRef = 516EB08A24C6E48300ADFC9B /* Reciplease.json */; };
 		516EB08D24C6E63900ADFC9B /* AlamofireSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516EB08C24C6E63900ADFC9B /* AlamofireSessionFake.swift */; };
@@ -38,6 +37,8 @@
 		DF664FAF2B7E0066008BED3D /* ApiNumbers.plist in Resources */ = {isa = PBXBuildFile; fileRef = DF664FAE2B7E0066008BED3D /* ApiNumbers.plist */; };
 		DF7C4F562BFB191C00AEDD4F /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7C4F552BFB191C00AEDD4F /* ImageDownloader.swift */; };
 		DFD32F162B7E12D200C09A4F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DFD32F152B7E12D200C09A4F /* Alamofire */; };
+		DFED7EF42C09BFC100B877CF /* RecipeCellTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFED7EF22C09BFC100B877CF /* RecipeCellTableView.swift */; };
+		DFED7EF52C09BFC100B877CF /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFED7EF32C09BFC100B877CF /* RecipeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,6 @@
 		19FF55A2B31CD98FF54863A1 /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
 		26DF6C8C62442EC21D3CD14C /* Pods-RecipleaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.debug.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5103A86E2473DFF40069F5B1 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		5168C61A24854C1A00AF4E32 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		516C6645248BA68C00ED11BF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		516EB08A24C6E48300ADFC9B /* Reciplease.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Reciplease.json; sourceTree = "<group>"; };
 		516EB08C24C6E63900ADFC9B /* AlamofireSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireSessionFake.swift; sourceTree = "<group>"; };
@@ -91,6 +91,8 @@
 		DF5199DF2C009DF400CD33F5 /* Reciplease.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reciplease.xcdatamodel; sourceTree = "<group>"; };
 		DF664FAE2B7E0066008BED3D /* ApiNumbers.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiNumbers.plist; sourceTree = "<group>"; };
 		DF7C4F552BFB191C00AEDD4F /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		DFED7EF22C09BFC100B877CF /* RecipeCellTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellTableView.swift; sourceTree = "<group>"; };
+		DFED7EF32C09BFC100B877CF /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,8 +190,9 @@
 			isa = PBXGroup;
 			children = (
 				51A6A2712450A219003E8D4A /* LaunchScreen.storyboard */,
+				DFED7EF22C09BFC100B877CF /* RecipeCellTableView.swift */,
+				DFED7EF32C09BFC100B877CF /* RecipeCell.xib */,
 				51A6A2692450A215003E8D4A /* Main.storyboard */,
-				5168C61A24854C1A00AF4E32 /* RecipeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				DF664FAF2B7E0066008BED3D /* ApiNumbers.plist in Resources */,
 				51A6A2702450A219003E8D4A /* Assets.xcassets in Resources */,
 				51A6A26B2450A215003E8D4A /* Main.storyboard in Resources */,
+				DFED7EF52C09BFC100B877CF /* RecipeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,8 +432,8 @@
 				5103A86F2473DFF40069F5B1 /* UIViewController.swift in Sources */,
 				DF7C4F562BFB191C00AEDD4F /* ImageDownloader.swift in Sources */,
 				516EB09124C6F1AB00ADFC9B /* RecipleaseSession.swift in Sources */,
-				5168C61B24854C1A00AF4E32 /* RecipeTableViewCell.swift in Sources */,
 				51BF2332248AA27A000EE8E5 /* ApiConfiguration.swift in Sources */,
+				DFED7EF42C09BFC100B877CF /* RecipeCellTableView.swift in Sources */,
 				51F73D0024A3367B00576782 /* FavoriteRecipeController.swift in Sources */,
 				51A6A2A52450A59A003E8D4A /* FavoritesController.swift in Sources */,
 				51FA311324573229005097B6 /* SearchController.swift in Sources */,

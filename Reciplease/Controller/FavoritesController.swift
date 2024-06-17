@@ -29,26 +29,33 @@ class FavoritesController: UITableViewController {
     return favoriteRecipe.count
   }
 
-  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as! RecipeTableViewCell
-    let recipe = favoriteRecipe[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath) as! RecipeCellTableView
+        let recipe = favoriteRecipe[indexPath.row]
 
-    cell.recipeTitle.text = recipe.title
-    cell.recipeTime.text = recipe.totalTime
-    cell.recipeIngredients.text = recipe.ingredients
-    cell.recipeYield.text = recipe.yield
+        if let title = recipe.title {
+            cell.recipeTitle.text = title
+        } else {
+            cell.recipeTitle.text = "Untitled Recipe"
+            print("Unable to retrieve recipe title for recipe at index \(indexPath.row)")
+        }
+        
+        cell.recipeTime.text = recipe.totalTime
+        cell.recipeIngredients.text = recipe.ingredients
+        cell.recipeYield.text = recipe.yield
 
-    if let imageUrlString = recipe.image, let url = URL(string: imageUrlString) {
-      ImageDownloader.loadImage(from: url) { image in
-        cell.recipeImage.image = image
-        cell.recipeImage.addBlackGradientLayerInForeground()
-      }
-    } else {
-      cell.recipeImage.image = nil
+        if let imageUrlString = recipe.image, let url = URL(string: imageUrlString) {
+          ImageDownloader.loadImage(from: url) { image in
+            cell.recipeImage.image = image
+            cell.recipeImage.addBlackGradientLayerInForeground()
+          }
+        } else {
+          cell.recipeImage.image = nil
+        }
+
+        return cell
     }
 
-    return cell
-  }
 
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 150
@@ -63,12 +70,18 @@ class FavoritesController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//        code a refacto avec favori
+            let nib = UINib(nibName: "RecipeCell", bundle: nil)
+            tableView.register(nib, forCellReuseIdentifier: "RecipeCell")
+           
         loadSavedData()
     }
 
 
   override func viewDidAppear(_ animated: Bool) {
     loadSavedData()
+      
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -156,105 +156,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="174" id="jVI-Ep-xNY" customClass="RecipeTableViewCell" customModule="Reciplease" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="414" height="174"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jVI-Ep-xNY" id="5rC-MW-wXq">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="174"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dva-1C-ogT">
-                                            <rect key="frame" x="315" y="16" width="60" height="43"/>
-                                            <color key="backgroundColor" red="0.49093452840000001" green="0.49320089630000002" blue="0.5" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="43" id="Dwu-RL-DTj"/>
-                                                <constraint firstAttribute="width" constant="60" id="MFy-Fm-WoQ"/>
-                                            </constraints>
-                                        </view>
-                                        <stackView contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="DnG-Dw-gbu">
-                                            <rect key="frame" x="315" y="16" width="60" height="47"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sff-Gf-nUP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="22.5"/>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCc-Kq-zZk">
-                                                    <rect key="frame" x="0.0" y="24.5" width="60" height="22.5"/>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" red="0.49093452840000001" green="0.49320089630000002" blue="0.5" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="X8t-kS-UX9"/>
-                                            </constraints>
-                                        </stackView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hMX-wB-Ksm">
-                                            <rect key="frame" x="375" y="37" width="19.5" height="22"/>
-                                            <color key="backgroundColor" red="0.21570449180000001" green="0.71947487109999997" blue="0.2339170257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="19.670000000000002" id="WYx-ip-M6Z"/>
-                                                <constraint firstAttribute="height" constant="22.829999999999998" id="r1d-kE-2ug"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Wzs-v8-t7c">
-                                            <rect key="frame" x="375" y="15.5" width="18.5" height="21.5"/>
-                                            <color key="backgroundColor" red="0.21570449180000001" green="0.71947487109999997" blue="0.2339170257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="18.670000000000002" id="oVH-U2-RoQ"/>
-                                                <constraint firstAttribute="height" constant="24.170000000000002" id="ziC-Cr-tZp"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQR-Wr-P4p">
-                                            <rect key="frame" x="25" y="135.5" width="42" height="22.5"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rd8-hC-DnJ">
-                                            <rect key="frame" x="0.0" y="11" width="414" height="174"/>
-                                        </imageView>
-                                        <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8DA-Bo-qS1">
-                                            <rect key="frame" x="0.0" y="58" width="414" height="58"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Wzs-v8-t7c" firstAttribute="top" secondItem="5rC-MW-wXq" secondAttribute="topMargin" constant="3.3300000000000001" id="6Li-Cs-fgX"/>
-                                        <constraint firstItem="YQR-Wr-P4p" firstAttribute="leading" secondItem="5rC-MW-wXq" secondAttribute="leadingMargin" constant="5" id="9VO-ai-leT"/>
-                                        <constraint firstItem="hMX-wB-Ksm" firstAttribute="leading" secondItem="dva-1C-ogT" secondAttribute="trailing" id="GsZ-io-0nx"/>
-                                        <constraint firstAttribute="trailing" secondItem="Rd8-hC-DnJ" secondAttribute="trailing" id="T4D-Cc-Qqa"/>
-                                        <constraint firstItem="DnG-Dw-gbu" firstAttribute="leading" secondItem="dva-1C-ogT" secondAttribute="leading" id="VBP-AD-NFd"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="dva-1C-ogT" secondAttribute="trailing" constant="19" id="Ycf-EI-pX1"/>
-                                        <constraint firstItem="Rd8-hC-DnJ" firstAttribute="leading" secondItem="5rC-MW-wXq" secondAttribute="leading" id="dHv-4P-dBG"/>
-                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="YQR-Wr-P4p" secondAttribute="trailing" constant="5" id="dtv-zE-irc"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="YQR-Wr-P4p" secondAttribute="bottom" constant="5" id="e3e-JD-cOm"/>
-                                        <constraint firstItem="hMX-wB-Ksm" firstAttribute="top" secondItem="5rC-MW-wXq" secondAttribute="top" constant="36.5" id="f1T-oU-QQS"/>
-                                        <constraint firstItem="dva-1C-ogT" firstAttribute="top" secondItem="5rC-MW-wXq" secondAttribute="topMargin" constant="5" id="gBa-SF-pfM"/>
-                                        <constraint firstItem="Rd8-hC-DnJ" firstAttribute="top" secondItem="5rC-MW-wXq" secondAttribute="top" id="idW-a1-nIW"/>
-                                        <constraint firstAttribute="bottom" secondItem="Rd8-hC-DnJ" secondAttribute="bottom" id="lQt-0d-SnT"/>
-                                        <constraint firstItem="Wzs-v8-t7c" firstAttribute="leading" secondItem="dva-1C-ogT" secondAttribute="trailing" id="pR1-52-TKL"/>
-                                        <constraint firstItem="DnG-Dw-gbu" firstAttribute="top" secondItem="5rC-MW-wXq" secondAttribute="topMargin" constant="5" id="xHB-D7-5SW"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="recipeImage" destination="Rd8-hC-DnJ" id="4nJ-Nb-3Mz"/>
-                                    <outlet property="recipeIngredients" destination="YQR-Wr-P4p" id="b2a-Ip-IBk"/>
-                                    <outlet property="recipeTime" destination="LCc-Kq-zZk" id="Axx-Zu-EGw"/>
-                                    <outlet property="recipeTitle" destination="8DA-Bo-qS1" id="AfZ-zm-iwf"/>
-                                    <outlet property="recipeYield" destination="Sff-Gf-nUP" id="ALg-kX-AKK"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="L4v-Zy-XeR" id="M6M-ef-COJ"/>
                             <outlet property="delegate" destination="L4v-Zy-XeR" id="NhN-hu-Kwm"/>
@@ -434,42 +335,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="150" id="kWC-8t-ZKE" customClass="RecipeTableViewCell" customModule="Reciplease" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="414" height="150"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kWC-8t-ZKE" id="4QY-Qv-uf2">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hqQ-4a-uJi">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxa-27-UUJ">
-                                            <rect key="frame" x="43" y="99" width="34" height="33"/>
-                                            <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="hqQ-4a-uJi" firstAttribute="leading" secondItem="4QY-Qv-uf2" secondAttribute="leadingMargin" constant="-20" id="Qsn-wU-NzS"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qxa-27-UUJ" secondAttribute="trailing" constant="20" symbolic="YES" id="Vat-VQ-vrc"/>
-                                        <constraint firstItem="hqQ-4a-uJi" firstAttribute="centerY" secondItem="4QY-Qv-uf2" secondAttribute="centerY" id="a5P-tR-Vbn"/>
-                                        <constraint firstItem="qxa-27-UUJ" firstAttribute="top" secondItem="4QY-Qv-uf2" secondAttribute="topMargin" constant="88" id="dhi-e1-Kdb"/>
-                                        <constraint firstItem="hqQ-4a-uJi" firstAttribute="top" secondItem="4QY-Qv-uf2" secondAttribute="topMargin" constant="-11" id="ese-lZ-m8w"/>
-                                        <constraint firstItem="qxa-27-UUJ" firstAttribute="leading" secondItem="4QY-Qv-uf2" secondAttribute="leadingMargin" constant="23" id="kGT-3k-93o"/>
-                                        <constraint firstItem="hqQ-4a-uJi" firstAttribute="centerX" secondItem="4QY-Qv-uf2" secondAttribute="centerX" id="kXl-rR-27H"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="qxa-27-UUJ" secondAttribute="bottom" constant="7" id="vhz-Lx-fkU"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="recipeImage" destination="hqQ-4a-uJi" id="6ep-ms-y4a"/>
-                                    <outlet property="recipeTitle" destination="qxa-27-UUJ" id="efn-dA-4qR"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Eet-qg-VhG" id="5ZW-dk-nV9"/>
                             <outlet property="delegate" destination="Eet-qg-VhG" id="rRe-bs-WXI"/>
@@ -696,7 +561,7 @@
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

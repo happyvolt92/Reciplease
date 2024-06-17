@@ -60,17 +60,25 @@ class FavoriteRecipeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // ASYNCHRONOUS
         if let urlString = recipe?.image,
-           let url = URL(string: urlString),
-           let data = try? Data(contentsOf: url) {
-            recipeImage.image = UIImage(data: data)
+           let url = URL(string: urlString) {
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        self.recipeImage.image = UIImage(data: data)
+                        self.recipeImage.addBlackGradientLayerInForeground()
+                    }
+                }
+            }
+        } else {
+            recipeImage.image = nil
         }
         
-        recipeImage.addBlackGradientLayerInForeground()
-        recipeYield.text = "\(recipe?.yield ?? "")"
-        recipeTime.text = "\(recipe?.totalTime ?? "")"
-        recipeTitle.text = "\(recipe?.title ?? "")"
-        recipeIngredients.text = "\(recipe?.ingredients ?? "")"
+        recipeYield.text = recipe?.yield ?? "N/A"
+        recipeTime.text = recipe?.totalTime ?? "N/A"
+        recipeTitle.text = recipe?.title ?? "Untitled Recipe"
+        recipeIngredients.text = recipe?.ingredients ?? "No ingredients available"
         
         self.favoritebutton.image = UIImage(systemName: "star.fill")
     }
