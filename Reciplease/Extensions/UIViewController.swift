@@ -27,7 +27,6 @@ extension UIViewController {
         }
     }
     
-    
     func initializeHideKeyboard() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,

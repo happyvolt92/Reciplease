@@ -44,7 +44,7 @@ class SearchResultViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let recipe = recipes[indexPath.row].recipe
-        performSegue(withIdentifier: "ResultToDetail", sender: recipe)
+        performSegue(withIdentifier: "ShowRecipeDetail", sender: recipe)
     }
     
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -59,7 +59,7 @@ class SearchResultViewController: UITableViewController {
                     self.recipes.append(contentsOf: recipe?.hits ?? [])
                     self.tableView.reloadData()
                 } else {
-                    self.alert(title: "Erreur", message: "Veuillez vérifier les informations renseignées et votre connexion !")
+                    self.alert(title: "Error", message: "Please check your network!")
                 }
             }
         })

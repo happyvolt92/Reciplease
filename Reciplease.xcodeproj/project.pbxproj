@@ -30,7 +30,6 @@
 		51B6D368246169B600E0EF63 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B6D367246169B600E0EF63 /* SearchResultViewController.swift */; };
 		51BF2332248AA27A000EE8E5 /* ApiConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF2331248AA27A000EE8E5 /* ApiConfiguration.swift */; };
 		51D348DF247BB43400341E50 /* RecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D348DE247BB43400341E50 /* RecipeController.swift */; };
-		51F73D0024A3367B00576782 /* FavoriteRecipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F73CFF24A3367B00576782 /* FavoriteRecipeController.swift */; };
 		51F73D0224A359AA00576782 /* SavedRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F73D0124A359AA00576782 /* SavedRecipe.swift */; };
 		51FA311324573229005097B6 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA311224573229005097B6 /* SearchController.swift */; };
 		DF5199E02C009DF400CD33F5 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF5199DE2C009DF400CD33F5 /* Reciplease.xcdatamodeld */; };
@@ -81,7 +80,6 @@
 		51B6D367246169B600E0EF63 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		51BF2331248AA27A000EE8E5 /* ApiConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfiguration.swift; sourceTree = "<group>"; };
 		51D348DE247BB43400341E50 /* RecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeController.swift; sourceTree = "<group>"; };
-		51F73CFF24A3367B00576782 /* FavoriteRecipeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeController.swift; sourceTree = "<group>"; };
 		51F73D0124A359AA00576782 /* SavedRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedRecipe.swift; sourceTree = "<group>"; };
 		51FA311224573229005097B6 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		7224BB50F4BE3C3DB1DC4CBB /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
@@ -233,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				51A6A2A42450A59A003E8D4A /* FavoritesController.swift */,
-				51F73CFF24A3367B00576782 /* FavoriteRecipeController.swift */,
 				51B6D367246169B600E0EF63 /* SearchResultViewController.swift */,
 				51D348DE247BB43400341E50 /* RecipeController.swift */,
 				51FA311224573229005097B6 /* SearchController.swift */,
@@ -434,7 +431,6 @@
 				516EB09124C6F1AB00ADFC9B /* RecipleaseSession.swift in Sources */,
 				51BF2332248AA27A000EE8E5 /* ApiConfiguration.swift in Sources */,
 				DFED7EF42C09BFC100B877CF /* RecipeCellTableView.swift in Sources */,
-				51F73D0024A3367B00576782 /* FavoriteRecipeController.swift in Sources */,
 				51A6A2A52450A59A003E8D4A /* FavoritesController.swift in Sources */,
 				51FA311324573229005097B6 /* SearchController.swift in Sources */,
 				51F73D0224A359AA00576782 /* SavedRecipe.swift in Sources */,
